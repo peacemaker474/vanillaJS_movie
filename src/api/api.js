@@ -12,4 +12,4 @@ const getAPI = {
     upcoming: () => api.get("movie/upcoming"),
 }
 
-getAPI.upcoming();
+export { getAPI };
