@@ -10,19 +10,21 @@ module.exports = {
     },
     output: {
         filename: "[name].js",
-        path: path.resolve("./dist"),
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({ template: './src/index.html' }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "css/main.css"
+        }),
         new CleanWebpackPlugin(),
     ]
 };

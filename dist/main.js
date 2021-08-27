@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/css/main.css":
+/*!**************************!*\
+  !*** ./src/css/main.css ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://vanillaJS_movie/./src/css/main.css?");
+
+/***/ }),
+
 /***/ "./src/api/api.js":
 /*!************************!*\
   !*** ./src/api/api.js ***!
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store/store */ \"./src/store/store.js\");\n\r\n\r\nconst body = document.body;\r\nconst { navList } = _store_store__WEBPACK_IMPORTED_MODULE_0__.default;\r\n\r\nconst createElementTag = () => {\r\n    const header = document.createElement(\"header\");\r\n    const nav = document.createElement(\"nav\");\r\n    const ul = document.createElement(\"ul\");\r\n\r\n    navList.map(item => {\r\n        const li = document.createElement(\"li\");\r\n        li.textContent = item.ko;\r\n        li.className = `nav_${item.en}`;\r\n        ul.append(li);\r\n    })\r\n\r\n    nav.append(ul);\r\n    header.append(nav);\r\n    body.append(header);\r\n}\r\n\r\nconst render = () => {\r\n    createElementTag();\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (render);\n\n//# sourceURL=webpack://vanillaJS_movie/./src/components/header.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store/store */ \"./src/store/store.js\");\n\r\n\r\nconst body = document.body;\r\nconst { navList } = _store_store__WEBPACK_IMPORTED_MODULE_0__.default;\r\n\r\nconst createElementTag = () => {\r\n    const header = document.createElement(\"header\");\r\n    const nav = document.createElement(\"nav\");\r\n    const ul = document.createElement(\"ul\");\r\n    const li = document.createElement(\"li\");\r\n    const logoBox = document.createElement(\"div\");\r\n\r\n    navList.map(item => {\r\n        const li = document.createElement(\"li\");\r\n        const a = document.createElement(\"a\");\r\n        a.textContent = item.ko;\r\n        a.href = `\"./${item.ko}\"`;\r\n        li.className = `main-nav__list main-nav__${item.en}`;\r\n        li.append(a);\r\n        ul.append(li);\r\n    });\r\n\r\n    nav.className = `main_nav`;\r\n    ul.className = `main-nav__lists`;\r\n    li.className = `main-nav__main-logo`;\r\n    logoBox.className = `main-logo__container`;\r\n\r\n    li.prepend(logoBox);\r\n    ul.prepend(li);\r\n    nav.append(ul);\r\n    header.append(nav);\r\n    body.append(header);\r\n\r\n}\r\n\r\nconst render = () => {\r\n    createElementTag();\r\n    const header = document.querySelector(\"header\");\r\n    const mainNav = document.querySelector(\".main_nav\");\r\n\r\n    console.log(header, mainNav);\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (render);\n\n//# sourceURL=webpack://vanillaJS_movie/./src/components/header.js?");
 
 /***/ }),
 
@@ -36,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api/api.js */ \"./src/api/api.js\");\n/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/header */ \"./src/components/header.js\");\n\r\n\r\n\r\n(0,_components_header__WEBPACK_IMPORTED_MODULE_1__.default)();\r\n\r\nconsole.log(_api_api_js__WEBPACK_IMPORTED_MODULE_0__.getAPI.upcoming());\n\n//# sourceURL=webpack://vanillaJS_movie/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api/api.js */ \"./src/api/api.js\");\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/main.css */ \"./src/css/main.css\");\n/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/header */ \"./src/components/header.js\");\n\r\n\r\n\r\n\r\n(0,_components_header__WEBPACK_IMPORTED_MODULE_2__.default)();\r\n\r\nconsole.log(_api_api_js__WEBPACK_IMPORTED_MODULE_0__.getAPI.upcoming());\n\n//# sourceURL=webpack://vanillaJS_movie/./src/index.js?");
 
 /***/ }),
 
@@ -46,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst headerList = {\r\n    navList: [\r\n        {\r\n            ko: \"영화\",\r\n            en: \"movie\"\r\n        },\r\n        {\r\n            ko: \"TV 프로그램\",\r\n            en: \"tv_show\"\r\n        },\r\n        {\r\n            ko: \"개발중\",\r\n            en: \"develop-ing\"\r\n        }\r\n    ],\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerList);\n\n//# sourceURL=webpack://vanillaJS_movie/./src/store/store.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst headerList = {\r\n    navList: [\r\n        {\r\n            ko: \"영화\",\r\n            en: \"movie\"\r\n        },\r\n        {\r\n            ko: \"TV 프로그램\",\r\n            en: \"TV-show\"\r\n        },\r\n        {\r\n            ko: \"개발중\",\r\n            en: \"develop-ing\"\r\n        }\r\n    ],\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerList);\n\n//# sourceURL=webpack://vanillaJS_movie/./src/store/store.js?");
 
 /***/ })
 

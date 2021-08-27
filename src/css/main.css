@@ -1,0 +1,12 @@
+@import url("./reset.css");
+@import url("./header/header.css");
+
+html{
+    font-size: 10px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}

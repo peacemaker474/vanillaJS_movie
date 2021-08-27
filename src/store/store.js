@@ -6,7 +6,7 @@ const headerList = {
         },
         {
             ko: "TV 프로그램",
-            en: "tv_show"
+            en: "TV-show"
         },
         {
             ko: "개발중",
