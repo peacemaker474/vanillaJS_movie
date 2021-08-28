@@ -1,6 +1,6 @@
-import headerList from '../store/store';
+import headerList from "../store/store";
 
-const body = document.body;
+const root = document.getElementById("root");
 const { navList } = headerList;
 
 // 검색 Modal 영역
@@ -20,7 +20,7 @@ const modalSearchForm = () => {
 const handleNavList = (li, a, item) => {
     if (typeof item.ko !== "undefined") {
         a.textContent = item.ko;
-        a.href = `"./${item.ko}"`;
+        a.href = `"./${item.en}"`;
         li.append(a);
     } else {
         const form = document.createElement("form");
@@ -68,17 +68,17 @@ const createElementHeader = () => {
     ul.prepend(li);
     nav.append(ul);
     header.append(nav);
-    body.append(header);
+    root.append(header);
 
 }
 
 // 추가적으로 제어하는 영역
 
-const render = () => {
+const headerRender = () => {
     createElementHeader();
     modalSearchForm();
 
 
 }
 
-export default render;
+export default headerRender;

@@ -47,6 +47,7 @@ header{
     border-radius: 20px;
     display: flex;
     justify-content: space-evenly;
+    margin-left: 150px;
 }
 
 .search-form__input {
