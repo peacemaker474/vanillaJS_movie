@@ -11,6 +11,9 @@ const headerList = {
         {
             ko: "개발중",
             en: "develop-ing"
+        },
+        {
+            en: "search"
         }
     ],
 }
