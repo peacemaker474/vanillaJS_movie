@@ -125,7 +125,62 @@ header{
 /*!*****************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/main/upcoming.css ***!
   \*****************************************************************************/
+.upcoming {
+    width: 63.4%;
+    height: 727px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
 
+.upcoming__title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin: 35px 0;
+}
+
+.upcoming__lists {
+    display: grid;
+    grid-template-columns: repeat(20, 247px);
+    grid-template-rows: 397px;
+    grid-gap: 20px;
+    margin-left: 10px;
+}
+
+.upcoming-list__content {
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+}
+
+.upcoming-list__content > img{
+    width: inherit;
+    height: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.upcoming-list__content > img:hover {
+    transform: scale(1.1);
+}
+
+.content__movie-title {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.content__movie-data {
+    display: block;
+    font-size: 1.2rem;
+    white-space:pre-wrap;
+    line-height: 2rem;
+    margin: 5px 0;
+}
+
+.content__movie-rating {
+    font-size: 1.2rem;
+}
 /*!********************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/main.css ***!
   \********************************************************************/

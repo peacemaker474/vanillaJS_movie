@@ -15,13 +15,29 @@ const createElementUpcoming = (data) => {
 
     data.map(item => {
         const movieList = document.createElement("div");
+        const movieContent = document.createElement("div");
+        const movieTitle = document.createElement("h3");
+        const openDateMovie = document.createElement("span");
+        const movieRating = document.createElement("span");
         const image = new Image();
 
         movieList.id = item.id;
         movieList.className = `upcoming-list__content`;
-        image.src = item.backdrop_path && `https://image.tmdb.org/t/p/w500/${item.backdrop_path}`;
+        movieContent.className = `content__movie-information`;
+        movieTitle.className = `content__movie-title`;
+        openDateMovie.className = `content__movie-data`;
+        movieRating.className = `content__movie-rating`;
 
+        image.src = item.backdrop_path && `https://image.tmdb.org/t/p/w500/${item.backdrop_path}`;
+        movieTitle.textContent = item.title;
+        openDateMovie.textContent = `${item.release_date && item.release_date.slice(0, 4)}`;
+        movieRating.textContent = `평점 ⭐ ${item.vote_average && item.vote_average}`;
+
+        movieContent.append(movieTitle);
+        movieContent.append(openDateMovie);
+        movieContent.append(movieRating);
         movieList.append(image);
+        movieList.append(movieContent);
         container.append(movieList);
     });
 
