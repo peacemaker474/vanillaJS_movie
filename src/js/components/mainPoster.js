@@ -22,7 +22,7 @@ const createrElementMainPoster = (data) => {
     header.append(posterDiv);
 }
 
-const handleChange = (data, item, posterDiv, posterTitle) => () => {
+const changeMainPoster = (data, item, posterDiv, posterTitle) => () => {
     posterTitle.textContent = data.title;
     posterDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`;
 
@@ -33,7 +33,7 @@ const handleChange = (data, item, posterDiv, posterTitle) => () => {
     rememberBox = item;
 }
 
-const handleChangePoster = async (data) => {
+const handleMainPoster = async (data) => {
     const getData = await data;
     createrElementMainPoster(getData);
     const posterDiv = document.querySelector(".header__main-poster");
@@ -48,8 +48,8 @@ const handleChangePoster = async (data) => {
     rememberBox = button[0];
 
     button.forEach((item, index) => {
-        item.addEventListener("click", handleChange(getData[index], item, posterDiv, posterTitle))
+        item.addEventListener("click", changeMainPoster(getData[index], item, posterDiv, posterTitle))
     });
 }
 
-export default handleChangePoster;
+export default handleMainPoster;
