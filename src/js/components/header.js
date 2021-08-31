@@ -1,4 +1,5 @@
-import headerList from "../store/store";
+import headerList from "../store/store";;
+import mainPoster from './mainPoster';
 
 const root = document.getElementById("root");
 const { navList } = headerList;
@@ -77,6 +78,7 @@ const createElementHeader = () => {
 const headerRender = () => {
     createElementHeader();
     modalSearchForm();
+    mainPoster();
 
 
 }

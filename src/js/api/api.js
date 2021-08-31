@@ -30,10 +30,16 @@ const boxOfficeAPI = axios.create({
     }
 })
 
+
 const getAPI = {
     upcoming: () => api.get("movie/upcoming"),
+    boxOffice: () => boxOfficeAPI.get(),
+    searchMain: title => api.get(`search/movie`, {
+        params: {
+            query: decodeURIComponent(title),
+        }
+    }),
 }
 
-boxOfficeAPI.get();
 
 export { getAPI };
