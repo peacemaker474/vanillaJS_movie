@@ -1,7 +1,7 @@
-import getTitle from "../api/getTitle";
-
-const createrElementMainPoster = () => {
-    console.log(getTitle());
+const createrElementMainPoster = (data) => {
+    if (data ?? data) {
+        console.log(data);
+    }
 }
 
 export default createrElementMainPoster;

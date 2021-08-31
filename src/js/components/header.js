@@ -79,8 +79,6 @@ const headerRender = () => {
     createElementHeader();
     modalSearchForm();
     mainPoster();
-
-
 }
 
 export default headerRender;
