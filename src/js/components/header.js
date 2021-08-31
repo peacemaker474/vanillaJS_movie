@@ -76,9 +76,12 @@ const createElementHeader = () => {
 // 추가적으로 제어하는 영역
 
 const headerRender = () => {
+    const checkRequestAPI = document.querySelector(".upcoming-list__content");
     createElementHeader();
     modalSearchForm();
-    mainPoster();
+    if (checkRequestAPI !== null) {
+        mainPoster();
+    }
 }
 
 export default headerRender;

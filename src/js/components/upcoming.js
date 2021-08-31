@@ -28,7 +28,7 @@ const createElementUpcoming = (data) => {
         openDateMovie.className = `content__movie-data`;
         movieRating.className = `content__movie-rating`;
 
-        image.src = item.backdrop_path && `https://image.tmdb.org/t/p/w500/${item.backdrop_path}`;
+        image.src = item.backdrop_path && `https://image.tmdb.org/t/p/w500${item.backdrop_path}`;
         movieTitle.textContent = item.title;
         openDateMovie.textContent = `${item.release_date && item.release_date.slice(0, 4)}`;
         movieRating.textContent = `평점 ⭐ ${item.vote_average && item.vote_average}`;
