@@ -1,7 +1,9 @@
 import '../css/main.css';
-import header from './components/header';
-import main from './components/main';
+
+import router from './router';
 import './api/getTitle';
 
-header();
-main();
+
+window.addEventListener("DOMContentLoaded", () => {
+    router(window.location.pathname);
+})

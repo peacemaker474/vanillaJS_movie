@@ -21,7 +21,7 @@ const modalSearchForm = () => {
 const handleNavList = (li, a, item) => {
     if (typeof item.ko !== "undefined") {
         a.textContent = item.ko;
-        a.href = `"./${item.en}"`;
+        a.href = `${item.en}`;
         li.append(a);
     } else {
         const form = document.createElement("form");

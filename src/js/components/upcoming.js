@@ -14,7 +14,7 @@ const createElementUpcoming = (data) => {
     h2.textContent = `곧 개봉할 영화`;
 
     data.map(item => {
-        const movieList = document.createElement("div");
+        const movieList = document.createElement("a");
         const movieContent = document.createElement("div");
         const movieTitle = document.createElement("h3");
         const openDateMovie = document.createElement("span");
@@ -22,6 +22,7 @@ const createElementUpcoming = (data) => {
         const image = new Image();
 
         movieList.id = item.id;
+        movieList.href = `/detail/${item.id}`
         movieList.className = `upcoming-list__content`;
         movieContent.className = `content__movie-information`;
         movieTitle.className = `content__movie-title`;
