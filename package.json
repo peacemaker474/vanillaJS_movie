@@ -1,5 +1,5 @@
 {
-  "name": "vanillaJS_movie",
+  "name": "vanillajs_movie",
   "version": "1.0.0",
   "description": "순수 자바스크립트로 구현하는 영화 사이트",
   "main": "webpack.config.js",
@@ -21,7 +21,6 @@
     "webpack-dev-server": "^4.0.0"
   },
   "scripts": {
-    "build": "webpack",
     "start": "webpack-dev-server"
   },
   "repository": {
