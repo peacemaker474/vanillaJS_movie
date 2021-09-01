@@ -1,2 +1,3 @@
+.cache
+.DS_Store // macOS
 node_modules
-*-lock.json
