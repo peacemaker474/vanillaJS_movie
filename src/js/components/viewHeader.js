@@ -43,6 +43,7 @@ const modalSearchForm = () => {
 const headerRender = () => {
     headerHTML();
     modalSearchForm();
+    console.log(document.querySelector(".header__main-poster"));
 }
 
 export { headerRender };

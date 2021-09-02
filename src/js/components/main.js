@@ -1,13 +1,13 @@
-import upcomingRender from "./upcoming";
+import { viewUpcomingRender } from "./viewUpcoming";
 
 const root = document.getElementById("root");
+
 
 const createElementMain = () => {
     const main = document.createElement("main");
     root.append(main);
 
-    upcomingRender();
-
 }
+
 
 export default createElementMain;

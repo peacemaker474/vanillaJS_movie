@@ -1,11 +1,10 @@
-import './api/getTitle';
+import './api/requestAPI/requestMainPoster';
 import { headerRender } from './components/viewHeader';
 import main from './components/main';
 import detail from "./components/detail";
 import '../css/main.css';
 
 const navigateTo = (url, id) => {
-    console.log(url, id);
     history.pushState(null, null, url);
     router(id);
 }
@@ -36,7 +35,7 @@ const router = async (id) => {
             isMatch: true
         };
     }
-    console.log(match.route.view());
+    match.route.view();
 }
 
 window.addEventListener("popstate", router)

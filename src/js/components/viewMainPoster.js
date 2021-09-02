@@ -3,6 +3,8 @@ let rememberBox;
 const viewMainPoster = () => {
     const section = document.createElement("section");
 
+    section.className = "header__poster-container";
+
     const mainPosterTemplate = `
     <div class="header__main-poster">
         <h2 class="header__main-title"></h2>
@@ -49,8 +51,9 @@ const changePosterContent = (data) => {
 }
 
 const viewMainPosterRender = (data) => {
+    console.log(document.querySelector(".header__poster-container"));
     viewMainPoster();
-    setTimeout(() => changePosterContent(data), 1000)
+    changePosterContent(data);
 }
 
 export default viewMainPosterRender;

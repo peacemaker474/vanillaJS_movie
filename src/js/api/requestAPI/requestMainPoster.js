@@ -1,5 +1,5 @@
-import { getAPI } from './api';
-import viewMainPosterRender from '../components/viewMainPoster';
+import { getAPI } from '../api';
+import viewMainPosterRender from '../../components/viewMainPoster';
 
 const getEncodeTitle = (mainTitle, query) => {
     const MAX_COUNT = 3;
