@@ -1,6 +1,7 @@
+import "../api/requestAPI/requestMainPoster";
 import viewMainPoster from "./viewMainPoster";
 
-const headerHTML = () => {
+const viewHeader = () => {
     const headerTemplate = `
         <header>
             <nav class="main_nav">
@@ -29,6 +30,11 @@ const headerHTML = () => {
     `;
 
     document.getElementById("root").innerHTML = headerTemplate;
+
+    if (document.querySelector(".main_nav") !== null) {
+        modalSearchForm();
+        document.querySelector("header").append(viewMainPoster());
+    };
 }
 
 const modalSearchForm = () => {
@@ -40,10 +46,4 @@ const modalSearchForm = () => {
     });
 }
 
-const headerRender = () => {
-    headerHTML();
-    modalSearchForm();
-    console.log(document.querySelector(".header__main-poster"));
-}
-
-export { headerRender };
+export { viewHeader };

@@ -1,6 +1,15 @@
-let rememberBox;
+import "../api/requestAPI/requestMainPoster";
 
-const viewMainPoster = () => {
+let rememberBox;
+let recentHTML = {
+    html: null,
+    posterdata: null,
+    cnt: 0,
+};
+
+
+const viewMainPoster = (data) => {
+
     const section = document.createElement("section");
 
     section.className = "header__poster-container";
@@ -16,11 +25,20 @@ const viewMainPoster = () => {
     </div>
     `;
 
-    section.innerHTML = mainPosterTemplate;
-    document.querySelector("header").append(section);
+    if (recentHTML.html === null) {
+        section.innerHTML = mainPosterTemplate;
+    } else {
+        section.innerHTML = recentHTML.html;
+    }
+    if (data !== undefined) {
+        changePosterContent(data);
+    }
+
+    return section;
 }
 
 const changeMainPoster = (data, item, posterDiv, posterTitle) => () => {
+    recentHTML.cnt = 1;
     posterTitle.textContent = data.title;
     posterDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`;
 
@@ -29,6 +47,11 @@ const changeMainPoster = (data, item, posterDiv, posterTitle) => () => {
     }
     item.style.backgroundColor = "white";
     rememberBox = item;
+
+    if (recentHTML.cnt === 1) {
+        recentHTML.html = document.querySelector(".header__poster-container").innerHTML;
+    }
+
 }
 
 const changePosterContent = (data) => {
@@ -38,22 +61,22 @@ const changePosterContent = (data) => {
     const posterTitle = document.querySelector(".header__main-title");
     const button = document.querySelectorAll(".header__main-button");
 
-    posterTitle.textContent = data[0].title;
-    posterDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${data[0].backdrop_path})`;
+    posterTitle.textContent = getData[0].title;
+    posterDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${getData[0].backdrop_path})`;
     posterDiv.style.backgroundSize = "cover";
     posterDiv.style.backgroundRepeat = "no-repeat";
     button[0].style.backgroundColor = "white";
     rememberBox = button[0];
 
+    if (recentHTML.cnt === 0) {
+        recentHTML.html = document.querySelector(".header__poster-container").innerHTML;
+    }
+
     button.forEach((item, index) => {
         item.addEventListener("click", changeMainPoster(getData[index], item, posterDiv, posterTitle))
     });
+
+    recentHTML.posterdata = data;
 }
 
-const viewMainPosterRender = (data) => {
-    console.log(document.querySelector(".header__poster-container"));
-    viewMainPoster();
-    changePosterContent(data);
-}
-
-export default viewMainPosterRender;
+export default viewMainPoster;
