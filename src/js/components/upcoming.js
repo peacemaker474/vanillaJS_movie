@@ -23,6 +23,7 @@ const createElementUpcoming = (data) => {
 
         movieList.id = item.id;
         movieList.href = `/detail/${item.id}`
+        movieList.setAttribute("data-link", "");
         movieList.className = `upcoming-list__content`;
         movieContent.className = `content__movie-information`;
         movieTitle.className = `content__movie-title`;

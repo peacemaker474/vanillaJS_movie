@@ -1,5 +1,5 @@
 import { getAPI } from './api';
-import mainPoster from '../components/mainPoster';
+import viewMainPosterRender from '../components/viewMainPoster';
 
 const getEncodeTitle = (mainTitle, query) => {
     const MAX_COUNT = 3;
@@ -47,7 +47,7 @@ const getMainTitle = async (query) => {
         console.log(e);
     } finally {
         mainTitle.loading = false;
-        mainPoster(mainTitle.maindata);
+        viewMainPosterRender(mainTitle.maindata);
     }
 }
 

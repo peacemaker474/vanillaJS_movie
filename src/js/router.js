@@ -9,7 +9,7 @@ const router = (path) => {
             main();
             break;
         case "/detail/":
-            console.log("상세 화면");
+            detail();
             break;
     }
 

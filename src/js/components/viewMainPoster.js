@@ -1,25 +1,21 @@
 let rememberBox;
 
-const createrElementMainPoster = (data) => {
-    const header = document.querySelector("header");
-    const posterDiv = document.createElement("div");
-    const posterTitle = document.createElement("h2");
-    const buttonDiv = document.createElement("div");
+const viewMainPoster = () => {
+    const section = document.createElement("section");
 
-    posterDiv.className = `header__main-poster`;
-    posterTitle.className = `header__main-title`;
-    buttonDiv.className = `header__main-buttonBox`;
+    const mainPosterTemplate = `
+    <div class="header__main-poster">
+        <h2 class="header__main-title"></h2>
+        <div class="header__main-buttonBox">
+            <button class="header__main-button"></button>
+            <button class="header__main-button"></button>
+            <button class="header__main-button"></button>
+        </div>
+    </div>
+    `;
 
-    for (let i = 1; i < data.length + 1; i++) {
-        const posterBtn = document.createElement("button");
-        posterBtn.id = i;
-        posterBtn.className = `header__main-button`;
-        buttonDiv.append(posterBtn);
-    }
-
-    posterDiv.append(posterTitle);
-    posterDiv.append(buttonDiv);
-    header.append(posterDiv);
+    section.innerHTML = mainPosterTemplate;
+    document.querySelector("header").append(section);
 }
 
 const changeMainPoster = (data, item, posterDiv, posterTitle) => () => {
@@ -33,9 +29,9 @@ const changeMainPoster = (data, item, posterDiv, posterTitle) => () => {
     rememberBox = item;
 }
 
-const handleMainPoster = async (data) => {
-    const getData = await data;
-    createrElementMainPoster(getData);
+const changePosterContent = (data) => {
+    const getData = data;
+
     const posterDiv = document.querySelector(".header__main-poster");
     const posterTitle = document.querySelector(".header__main-title");
     const button = document.querySelectorAll(".header__main-button");
@@ -52,4 +48,9 @@ const handleMainPoster = async (data) => {
     });
 }
 
-export default handleMainPoster;
+const viewMainPosterRender = (data) => {
+    viewMainPoster();
+    setTimeout(() => changePosterContent(data), 1000)
+}
+
+export default viewMainPosterRender;
